@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/com/github/Kinten108101/ValvePakNavigator">
+		<file>ui/window.ui</file>
+	</gresource>
+</gresources>

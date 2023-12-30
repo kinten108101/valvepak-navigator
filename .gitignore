@@ -1,0 +1,14 @@
+.flatpak-builder
+_build
+build
+.buildconfig
+config.rs
+src/config.rs
+./target
+target/
+target
+**/*.rs.bk
+./.cargo
+.cargo
+.flatpak
+.vscode
