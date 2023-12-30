@@ -1,4 +1,4 @@
-<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/com.github.kinten108101.ValvePakNavigator.svg" width="120" height="120" align="left">
+<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/com.github.kinten108101.ValvePakNavigator.svg" width="120" height="120" align="center">
 
 # Valve-Pak Navigator
 
