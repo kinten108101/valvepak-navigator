@@ -1,0 +1,160 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ApplicationWindow window {
+	default-width: 800;
+	default-height: 400;
+
+	Adw.ToolbarView {
+		[top]
+		Gtk.Stack window_headerbar_stack {
+			Gtk.StackPage {
+				name: 'headerbar_empty';
+				child:
+					Adw.HeaderBar {
+						title-widget:
+							Adw.WindowTitle {
+								title: 'ValvePak Navigator';
+							};
+					};
+			}
+
+			Gtk.StackPage {
+				name: 'headerbar_main';
+				child:
+					Adw.HeaderBar {
+						centering-policy: strict;
+						title-widget:
+							Gtk.CenterBox {
+								center-widget:
+									Adw.Clamp {
+										maximum-size: 300;
+
+										Gtk.Box {
+											width-request: 100;
+
+											styles [
+											  'lol'
+											]
+
+											Gtk.ScrolledWindow {
+												vscrollbar-policy: never;
+												hscrollbar-policy: external;
+												hexpand: true;
+
+												Gtk.Box {
+													styles [
+													  'bar-content'
+													]
+
+													spacing: 4;
+
+													Gtk.Button {
+														styles [
+															'thin-button'
+														]
+
+														Gtk.Box {
+															spacing: 6;
+
+															Gtk.Image {
+																styles [
+																	'label'
+																]
+
+																icon-name: 'package-x-generic-symbolic';
+															}
+
+															Gtk.Label {
+																styles [
+																	'label'
+																]
+
+																label: 'Root';
+															}
+														}
+													}
+
+													Gtk.Label {
+														label: '/';
+
+														styles [
+															'dim-label'
+														]
+													}
+
+													Gtk.Button {
+														styles [
+															'thin-button'
+														]
+
+														Gtk.Label {
+															styles [
+																'label'
+															]
+
+															label: 'materials';
+														}
+													}
+												}
+											}
+										}
+									};
+							};
+					};
+			}
+		}
+
+		Gtk.Overlay {
+			[overlay]
+			Revealer drag_revealer {
+				can-target: false;
+				transition-type: crossfade;
+
+				child:
+					Adw.StatusPage {
+						icon-name: "folder-download-symbolic";
+						title: _("Drop to open");
+
+						styles [
+							"drag-overlay-status-page",
+						]
+					};
+			}
+
+			child:
+				Gtk.Stack window_content_stack {
+					transition-type: crossfade;
+
+					Gtk.StackPage {
+						name: 'empty';
+						child:
+							Gtk.Box {
+								orientation: vertical;
+
+								Adw.StatusPage {
+									vexpand: true;
+
+									title: 'ValvePak Navigator';
+									description: 'Drag &amp; drop your archive here.';
+								}
+							};
+
+					}
+
+					Gtk.StackPage {
+						name: 'main';
+						child:
+							Gtk.Box {
+								orientation: vertical;
+
+								Gtk.Box {
+									valign: fill;
+									vexpand: true;
+								}
+							};
+					}
+				};
+		}
+	}
+}

@@ -1,6 +1,6 @@
 project('valvepak-navigator',
         'rust',
-        license: 'GPL-3.0-or-later',
+        license: 'MIT',
         meson_version: '>= 0.59')
 
 gnome = import('gnome')

@@ -1,14 +1,20 @@
+# build system metadata
 .flatpak-builder
-_build
-build
 .buildconfig
-config.rs
-src/config.rs
-./target
-target/
-target
-**/*.rs.bk
-./.cargo
 .cargo
 .flatpak
+
+# build dirs
+_build
+build
+build-meson
+build-flatpak
+target/
+
+# generated files
+src/config.rs
+**/*.rs.bk
+
+# ide config
 .vscode
+*.sublime*
