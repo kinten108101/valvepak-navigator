@@ -13,6 +13,8 @@ dependency(
 )
 
 cargo = find_program('cargo', required: true)
+blueprint_compiler = find_program('blueprint-compiler', version: '>=0.8.1', required: true)
+
 cargo_version = run_command(cargo, '--version', check: true).stdout().strip()
 message(cargo_version)
 rustc_version = run_command('rustc', '--version', check: true).stdout().strip()
